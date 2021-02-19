@@ -1,6 +1,7 @@
 <template>
   <div class="topnav">
     <div class="logo" @click="toggleMenu">LOGO</div>
+    <div class="toggleAside"></div>
     <div class="menu"></div>
     <ul class="menu">
       <li>菜单1</li>
@@ -40,6 +41,16 @@ export default {
     > li {
       margin: 0 1em;
     }
+  }
+  > .toggleAside {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: red;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   @media (max-width: 500px) {
     > .menu {
