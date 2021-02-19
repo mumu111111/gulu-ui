@@ -24,13 +24,29 @@ button {
   background: grey;
   border-radius: $h/2;
   position: relative;
+  &.checked {
+    background: #1890ff;
+  }
+  &.checked > span {
+    left: calc(100% - #{$h2} - 2px);
+  }
+  &:focus {
+    outline: none;
+  }
+  /* 激活时span形状变化 */
+  &:active {
+    > span {
+      width: $h2 + 4px;
+    }
+  }
+  &.checked:active {
+    > span {
+      width: $h2 + 4px;
+      margin-left: -4px;
+    }
+  }
 }
-button.checked {
-  background: blue;
-}
-button.checked > span {
-  left: calc(100% - #{$h2} - 2px);
-}
+
 span {
   position: absolute;
   top: 2px;
@@ -40,8 +56,5 @@ span {
   background: white;
   border-radius: $h2 / 2;
   transition: left 250ms;
-}
-button:focus {
-  outline: none;
 }
 </style> 
