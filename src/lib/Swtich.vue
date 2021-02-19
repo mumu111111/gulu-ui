@@ -21,7 +21,7 @@ button {
   height: $h;
   width: $h * 2;
   border: none;
-  background: bfbfbf;
+  background: #bfbfbf;
   border-radius: $h/2;
   position: relative;
   &.checked {

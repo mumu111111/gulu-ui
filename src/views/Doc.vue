@@ -34,8 +34,7 @@ import { inject, Ref } from "vue";
 export default {
   components: { Topnav },
   setup() {
-    console.log(1);
-    const asideVisible = inject<Ref<boolean>>("xx"); // get
+    const asideVisible = inject<Ref<boolean>>("asideVisible"); // get
     console.log("doc获取标记", asideVisible.value);
     return { asideVisible };
   },
