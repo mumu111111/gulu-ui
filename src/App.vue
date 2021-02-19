@@ -9,8 +9,9 @@ export default {
 
   setup() {
     // 声明变量标记  默认false
-    console.log(2222);
-    const asideVisible = ref(false);
+    const width = document.documentElement.clientWidth;
+
+    const asideVisible = ref(width > 500 ? true : false);
     provide("xx", asideVisible); // set
   },
 };
