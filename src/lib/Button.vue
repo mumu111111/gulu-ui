@@ -18,13 +18,18 @@ export default {
       type: String,
       default: "normal",
     },
+    level: {
+      type: String,
+      default: "normal",
+    },
   },
   setup(props) {
-    const { theme, size } = props;
+    const { theme, size, level } = props;
     const classes = computed(() => {
       return {
         [`gulu-theme-${theme}`]: theme,
         [`gulu-theme-${size}`]: size,
+        [`gulu-level-${level}`]: level,
       };
     });
     return { classes };
@@ -32,6 +37,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+$blue: blue;
 .gulu-button {
   &.gulu-theme-link {
     border: 1px solid red;
@@ -45,6 +51,17 @@ export default {
   &.gulu-size-big {
   }
   &.gulu-size-normal {
+  }
+  &.gulu-theme-button {
+    &.gulu-level-main {
+      color: $blue;
+      &:hover,
+      &:focus {
+        color: darken($blue, 10%);
+      }
+    }
+    &.gulu-level-danger {
+    }
   }
 }
 </style>
