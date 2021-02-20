@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="gulu-button" :class="classes">
+    <button class="gulu-button" :class="classes" :disabled="disabled">
       <slot />
     </button>
   </div>
@@ -22,6 +22,10 @@ export default {
       type: String,
       default: "normal",
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const { theme, size, level } = props;
@@ -37,7 +41,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$blue: blue;
+$blue: #40a9ff;
+$radius: 4px;
+$red: red;
+$grey: grey;
 .gulu-button {
   &.gulu-theme-link {
     border: 1px solid red;
@@ -61,6 +68,22 @@ $blue: blue;
       }
     }
     &.gulu-level-danger {
+    }
+  }
+  &.gulu-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.gulu-theme-link,
+  &.gulu-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
     }
   }
 }
