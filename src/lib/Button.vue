@@ -1,14 +1,11 @@
 <template>
-  <div>
-    <button class="gulu-button" :class="classes" :disabled="disabled">
-      <slot />
-    </button>
-  </div>
+  <button class="gulu-button" :class="classes" :disabled="disabled">
+    <slot />
+  </button>
 </template>
 <script lang="ts">
 import { computed } from "vue";
 export default {
-  inheritAttrs: false,
   props: {
     theme: {
       type: String,
