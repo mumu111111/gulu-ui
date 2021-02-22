@@ -1,7 +1,7 @@
 <template>
   <div>Dialog 示例</div>
   <Button @click="toggle">toggle</Button>
-  <Dialog :visible="x" />
+  <Dialog v-model:visible="x"></Dialog>
 </template>
 <script lang="ts">
 import { ref } from "vue";
