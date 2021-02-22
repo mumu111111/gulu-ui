@@ -1,5 +1,7 @@
 <template>
-  <button @click="toggle" :class="{ checked: value }"><span></span></button>
+  <button @click="toggle" :class="{ 'gulu-checked': value }">
+    <span></span>
+  </button>
 </template>
 <script>
 import { ref } from "vue";
@@ -14,7 +16,7 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss" >
 $h: 22px;
 $h2: $h - 4px;
 button {
@@ -24,10 +26,10 @@ button {
   background: #bfbfbf;
   border-radius: $h/2;
   position: relative;
-  &.checked {
+  &.gulu-checked {
     background: #1890ff;
   }
-  &.checked > span {
+  &.gulu-checked > span {
     left: calc(100% - #{$h2} - 2px);
   }
   &:focus {
@@ -39,7 +41,7 @@ button {
       width: $h2 + 4px;
     }
   }
-  &.checked:active {
+  &.gulu-checked:active {
     > span {
       width: $h2 + 4px;
       margin-left: -4px;
