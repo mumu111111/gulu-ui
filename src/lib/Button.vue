@@ -1,5 +1,6 @@
 <template>
   <button class="gulu-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="gulu-loadingIndicator"></span>
     <slot />
   </button>
 </template>
@@ -20,6 +21,10 @@ export default {
       default: "normal",
     },
     disabled: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
       type: Boolean,
       default: false,
     },
@@ -59,6 +64,7 @@ $grey: grey;
   border: 1px solid $border-color;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
+  transition: background 250ms;
   & + & {
     margin-left: 8px;
   }
@@ -74,19 +80,65 @@ $grey: grey;
     border: 0;
   }
   &.gulu-theme-link {
-    border: 1px solid red;
+    border-color: transparent;
+    box-shadow: none;
+    color: $blue;
+    &:hover,
+    &:focus {
+      color: lighten($blue, 10%);
+    }
   }
   &.gulu-theme-text {
-  }
-  &.gulu-theme-button {
-  }
-  &.gulu-size-small {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);
+    }
   }
   &.gulu-size-big {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
   }
-  &.gulu-size-normal {
+  &.gulu-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
   }
   &.gulu-theme-button {
+    &.gulu-level-main {
+      background: $blue;
+      color: white;
+      border-color: $blue;
+      &:hover,
+      &:focus {
+        background: darken($blue, 10%);
+        border-color: darken($blue, 10%);
+      }
+    }
+    &.gulu-level-danger {
+      background: $red;
+      border-color: $red;
+      color: white;
+      &:hover,
+      &:focus {
+        background: darken($red, 10%);
+        border-color: darken($red, 10%);
+      }
+    }
+  }
+  &.gulu-theme-link {
+    &.gulu-level-danger {
+      color: $red;
+      &:hover,
+      &:focus {
+        color: darken($red, 10%);
+      }
+    }
+  }
+  &.gulu-theme-text {
     &.gulu-level-main {
       color: $blue;
       &:hover,
@@ -95,6 +147,11 @@ $grey: grey;
       }
     }
     &.gulu-level-danger {
+      color: $red;
+      &:hover,
+      &:focus {
+        color: darken($red, 10%);
+      }
     }
   }
   &.gulu-theme-button {
@@ -112,6 +169,25 @@ $grey: grey;
       cursor: not-allowed;
       color: $grey;
     }
+  }
+  > .gulu-loadingIndicator {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-color: $blue $blue $blue transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: gulu-spin 1s infinite linear;
+  }
+}
+@keyframes gulu-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 </style>
