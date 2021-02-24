@@ -1,15 +1,12 @@
 <template>
-  <!-- <div> -->
-  <!-- <div v-for="(title, index) in titles" key="index">{{ title }}</div>
-    <component v-for="(c, index) in defaults" :is="c" key="index" />
-
-    
-  </div>
- -->
-
   <div class="gulu-tabs">
     <div class="gulu-tabs-nav">
-      <div class="gulu-tabs-nav-item" v-for="(t, index) in titles" :key="index">
+      <div
+        class="gulu-tabs-nav-item"
+        v-for="(t, index) in titles"
+        :key="index"
+        :class="{ selected: t == selected }"
+      >
         {{ t }}
       </div>
     </div>
@@ -26,12 +23,14 @@
 <script>
 import Tab from "./Tab.vue";
 export default {
+  props: {
+    selected: {
+      type: String,
+    },
+  },
   setup(props, context) {
-    console.log(context);
     const defaults = context.slots.default();
-    console.log(defaults);
     defaults.forEach((tag) => {
-      console.log(tag.type);
       //   检查子组件类型
       if (tag.type !== Tab) {
         throw new Error("Tabs 子标签必须时 Tab");
