@@ -6,6 +6,7 @@
         v-for="(t, index) in titles"
         :key="index"
         :class="{ selected: t == selected }"
+        @click="select(t)"
       >
         {{ t }}
       </div>
@@ -13,6 +14,7 @@
     <div class="gulu-tabs-content">
       <component
         class="gulu-tabs-content-item"
+        :class="{ selected: c.props.title == selected }"
         v-for="(c, index) in defaults"
         :is="c"
         :key="index"
@@ -39,7 +41,11 @@ export default {
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
-    return { defaults, titles };
+    const select = (t) => {
+      console.log("desdsd");
+      context.emit("update:selected", t);
+    };
+    return { defaults, titles, select };
   },
 };
 </script>
@@ -66,6 +72,12 @@ $border-color: #d9d9d9;
   }
   &-content {
     padding: 8px 0;
+    &-item {
+      display: none;
+      &.selected {
+        display: block;
+      }
+    }
   }
 }
 </style>
