@@ -31,7 +31,7 @@
   </div>
 </template>
 <script lang="ts">
-import { onMounted, onUpdated, ref } from "vue";
+import { onMounted, onUpdated, ref, watchEffect } from "vue";
 import Tab from "./Tab.vue";
 export default {
   props: {
@@ -43,17 +43,19 @@ export default {
     const selectItem = ref<HTMLDivElement>(null);
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
-    const x = () => {
-      const { width } = selectItem.value.getBoundingClientRect(); // 导航的宽度
-      indicator.value.style.width = width + "px"; // 动态获取width
 
-      const { left: left1 } = container.value.getBoundingClientRect();
-      const { left: left2 } = selectItem.value.getBoundingClientRect();
-      const left = left2 - left1;
-      indicator.value.style.left = left + "px";
-    };
-    onMounted(x);
-    onUpdated(x);
+    onMounted(() => {
+      // 当第一次渲染后才能获取到selectItem
+      watchEffect(() => {
+        console.log(selectItem.value);
+        const { width } = selectItem.value.getBoundingClientRect(); // 导航的宽度
+        indicator.value.style.width = width + "px"; // 动态获取width
+        const { left: left1 } = container.value.getBoundingClientRect();
+        const { left: left2 } = selectItem.value.getBoundingClientRect();
+        const left = left2 - left1;
+        indicator.value.style.left = left + "px";
+      });
+    });
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
       //   检查子组件类型
