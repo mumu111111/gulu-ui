@@ -6,7 +6,9 @@
         v-for="(t, index) in titles"
         :ref="
           (el) => {
-            if (el) navItems[index] = el;
+            if (t == selected) {
+              selectItem = el;
+            }
           }
         "
         :key="index"
@@ -38,19 +40,15 @@ export default {
     },
   },
   setup(props, context) {
-    const navItems = ref<HTMLDivElement[]>([]);
+    const selectItem = ref<HTMLDivElement>(null);
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
     const x = () => {
-      const divs = navItems.value;
-      const result = divs.filter((div) =>
-        div.classList.contains("selected")
-      )[0]; //div
-      const { width } = result.getBoundingClientRect(); // 导航的宽度
+      const { width } = selectItem.value.getBoundingClientRect(); // 导航的宽度
       indicator.value.style.width = width + "px"; // 动态获取width
 
       const { left: left1 } = container.value.getBoundingClientRect();
-      const { left: left2 } = result.getBoundingClientRect();
+      const { left: left2 } = selectItem.value.getBoundingClientRect();
       const left = left2 - left1;
       indicator.value.style.left = left + "px";
     };
@@ -69,7 +67,7 @@ export default {
     const select = (t) => {
       context.emit("update:selected", t);
     };
-    return { defaults, titles, select, navItems, indicator, container };
+    return { defaults, titles, select, selectItem, indicator, container };
   },
 };
 </script>
