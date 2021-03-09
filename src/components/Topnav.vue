@@ -39,6 +39,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 $color: #007974;
+$aside-index: 10;
 .topnav {
   color: $color;
   background: pink;
@@ -48,7 +49,7 @@ $color: #007974;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10; //不被挡住
+  z-index: $aside-index; //不被挡住
   > .logo {
     max-width: 6em;
     margin-right: auto;
