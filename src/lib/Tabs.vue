@@ -59,7 +59,11 @@ export default {
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
       //   检查子组件类型
-      if (tag.type !== Tab) {
+      console.log("tag", tag);
+      console.log("Tab", Tab);
+
+      // if (tag.type !== Tab) {
+      if (tag.type.name !== Tab.name) {
         throw new Error("Tabs 子标签必须时 Tab");
       }
     });
