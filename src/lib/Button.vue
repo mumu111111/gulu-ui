@@ -34,7 +34,7 @@ export default {
     const classes = computed(() => {
       return {
         [`gulu-theme-${theme}`]: theme,
-        [`gulu-theme-${size}`]: size,
+        [`gulu-size-${size}`]: size,
         [`gulu-level-${level}`]: level,
       };
     });
