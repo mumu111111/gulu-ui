@@ -38,11 +38,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+$green: rgb(90, 180, 176);
 $color: #007974;
 $aside-index: 10;
 .topnav {
   color: $color;
-  background: pink;
+  background: $green;
   display: flex;
   padding: 16px;
   position: fixed;
@@ -60,6 +61,7 @@ $aside-index: 10;
   }
   > .menu {
     display: flex;
+    align-items: center;
     white-space: nowrap;
     flex-wrap: nowrap;
     > li {
