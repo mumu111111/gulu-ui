@@ -81,13 +81,14 @@ export default {
   }
 }
 aside {
-  background: lightblue;
-  width: 150px;
+  background: #e3e3e3;
+  width: 200px;
   padding: 16px 0;
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 70px;
+  z-index: 20;
+  /* padding-top: 70px; */
   height: 100%;
   > h2 {
     margin-bottom: 4px;
@@ -101,7 +102,7 @@ aside {
         text-decoration: none;
       }
       .router-link-active {
-        background: white;
+        background: rgb(90, 180, 176);
       }
     }
   }
@@ -111,9 +112,9 @@ aside {
   /* 手机上才绝对定位 */
   @media (max-width: 500px) {
     position: fixed;
-    top: 0;
+    top: 68px;
     left: 0;
-    padding-top: 70px;
+    /* padding-top: 70px; */
   }
 }
 </style> 
