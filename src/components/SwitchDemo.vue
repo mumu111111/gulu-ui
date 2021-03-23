@@ -12,8 +12,25 @@
           <Button>查看代码</Button>
         </div>
         <div class="demo-code">
-          <pre>&lt;Switch v-model:value="bool" /&gt;</pre>
-          <!-- {{ Switch1Demo.__sourceCode }} 暂时不显示 -->
+          <pre><code>&lt;template&gt;
+  &lt;Switch v-model:value="bool" /&gt;
+&lt;/template&gt;
+&lt;script lang="ts"&gt;
+import Switch from "../lib/Swtich.vue";
+import { ref } from "vue";
+export default {
+  components: {
+    Switch,
+  },
+  setup() {
+    const bool = ref(false);
+    return {
+      bool,
+    };
+  },
+};
+&lt;/script&gt;
+ </code></pre>
         </div>
       </div>
       <div class="demo">
@@ -27,7 +44,25 @@
         </div>
         <div class="demo-code">
           <!-- {{ Switch2Demo.__sourceCode }} -->
-          <pre>&lt;Switch v-model:value="bool" disabled /&gt;</pre>
+          <pre><code>&lt;template&gt;
+  &lt;Switch v-model:value="bool"  disabled /&gt;
+&lt;/template&gt;
+&lt;script lang="ts"&gt;
+import Switch from "../lib/Swtich.vue"; 
+import { ref } from "vue";
+export default {
+  components: {
+    Switch,
+  },
+  setup() {
+    const bool = ref(false);
+    return {
+      bool,
+    };
+  },
+};
+&lt;/script&gt;
+ </code></pre>
         </div>
       </div>
     </div>
@@ -39,16 +74,16 @@ import Button from "../lib/Button.vue";
 import Switch1Demo from "./Switch1.demo.vue";
 import Switch2Demo from "./Switch2.demo.vue";
 import { ref } from "vue";
+console.log(Switch2Demo.__sourceCode);
 export default {
   components: {
-    // Switch1Demo,
-    // Switch2Demo,
-    // Switch,
+    Switch1Demo,
+    Switch2Demo,
+    Switch,
     Button,
   },
   setup() {
     const bool = ref(false);
-    // console.log("ff", Switch1Demo.__sourceCode);
 
     return {
       bool,
