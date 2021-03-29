@@ -8,9 +8,10 @@
           <component :is="Switch1Demo"></component>
         </div>
         <div class="demo-actions">
-          <Button>查看代码</Button>
+          <Button @click="hideCode(1)" v-if="codeVisible">隐藏代码</Button>
+          <Button @click="showCode(1)" v-else>查看代码</Button>
         </div>
-        <div class="demo-code">
+        <div class="demo-code" v-if="codeVisible">
           <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool" /&gt;
 &lt;/template&gt;
@@ -39,10 +40,10 @@ export default {
           <component :is="Switch2Demo"></component>
         </div>
         <div class="demo-actions">
-          <Button>查看代码</Button>
+          <Button @click="hideCode(2)" v-if="codeVisible1">隐藏代码</Button>
+          <Button @click="showCode(2)" v-else>查看代码</Button>
         </div>
-        <div class="demo-code">
-          <!-- {{ Switch2Demo.__sourceCode }} -->
+        <div class="demo-code" v-if="codeVisible1">
           <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool"  disabled /&gt;
 &lt;/template&gt;
@@ -82,10 +83,31 @@ export default {
   },
   setup() {
     const bool = ref(false);
+    const showCode = (t) => {
+      if (t == 1) {
+        codeVisible.value = true;
+      } else {
+        codeVisible1.value = true;
+      }
+    };
+    const hideCode = (t) => {
+      if (t == 1) {
+        codeVisible.value = false;
+      } else {
+        codeVisible1.value = false;
+      }
+    };
+    const codeVisible = ref(false);
+    const codeVisible1 = ref(false);
+
     return {
       bool,
       Switch1Demo,
       Switch2Demo,
+      showCode,
+      hideCode,
+      codeVisible,
+      codeVisible1,
     };
   },
 };

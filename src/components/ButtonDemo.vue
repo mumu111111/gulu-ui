@@ -6,10 +6,11 @@
       <div class="demo-component">
         <component :is="Button1Demo"></component>
       </div>
-      <div class="demo-actions">
-        <Button>查看代码</Button>
-      </div>
-      <div class="demo-code">
+     <div class="demo-actions">
+      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+      <Button @click="showCode" v-else>查看代码</Button>
+    </div>
+    <div class="demo-code" v-if="codeVisible">
         <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool" /&gt;
 &lt;/template&gt;
@@ -36,10 +37,11 @@ export default {
       <div class="demo-component">
         <component :is="Button2Demo"></component>
       </div>
-      <div class="demo-actions">
-        <Button>查看代码</Button>
-      </div>
-      <div class="demo-code">
+     <div class="demo-actions">
+      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+      <Button @click="showCode" v-else>查看代码</Button>
+    </div>
+    <div class="demo-code" v-if="codeVisible">
         <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool" /&gt;
 &lt;/template&gt;
@@ -64,13 +66,13 @@ export default {
     <div class="demo">
       <h2>支持level</h2>
       <div class="demo-component">
-        <!-- <Switch1Demo /> -->
         <component :is="Button3Demo"></component>
       </div>
-      <div class="demo-actions">
-        <Button>查看代码</Button>
-      </div>
-      <div class="demo-code">
+     <div class="demo-actions">
+      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+      <Button @click="showCode" v-else>查看代码</Button>
+    </div>
+    <div class="demo-code" v-if="codeVisible">
         <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool" /&gt;
 &lt;/template&gt;
@@ -95,13 +97,13 @@ export default {
     <div class="demo">
       <h2>支持level</h2>
       <div class="demo-component">
-        <!-- <Switch1Demo /> -->
         <component :is="Button4Demo"></component>
       </div>
       <div class="demo-actions">
-        <Button>查看代码</Button>
-      </div>
-      <div class="demo-code">
+      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+      <Button @click="showCode" v-else>查看代码</Button>
+    </div>
+    <div class="demo-code" v-if="codeVisible">
         <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool" /&gt;
 &lt;/template&gt;
@@ -129,9 +131,10 @@ export default {
         <component :is="Button5Demo"></component>
       </div>
       <div class="demo-actions">
-        <Button>查看代码</Button>
-      </div>
-      <div class="demo-code">
+      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+      <Button @click="showCode" v-else>查看代码</Button>
+    </div>
+    <div class="demo-code" v-if="codeVisible">
         <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool" /&gt;
 &lt;/template&gt;

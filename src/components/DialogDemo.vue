@@ -6,9 +6,10 @@
       <component :is="Dialog1Demo"></component>
     </div>
     <div class="demo-actions">
-      <Button>查看代码</Button>
+      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+      <Button @click="showCode" v-else>查看代码</Button>
     </div>
-    <div class="demo-code">
+    <div class="demo-code" v-if="codeVisible">
       <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool"  disabled /&gt;
 &lt;/template&gt;
@@ -37,9 +38,10 @@ export default {
       <component :is="Dialog2Demo"></component>
     </div>
     <div class="demo-actions">
-      <Button>查看代码</Button>
+      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+      <Button @click="showCode" v-else>查看代码</Button>
     </div>
-    <div class="demo-code">
+    <div class="demo-code" v-if="codeVisible">
       <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool"  disabled /&gt;
 &lt;/template&gt;
