@@ -40,7 +40,7 @@ export default {
 <style lang="scss" scoped>
 $green: rgb(90, 180, 176);
 $color: #007974;
-$aside-index: 10;
+$aside-index: 16;
 .topnav {
   color: $color;
   background: $green;

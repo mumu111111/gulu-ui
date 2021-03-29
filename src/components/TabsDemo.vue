@@ -1,23 +1,75 @@
 <template>
-  <div>tabs组件</div>
-  <Tabs v-model:selected="x">
-    <Tab title="导航1">内容1</Tab>
-    <Tab title="导航2">内容2</Tab>
-  </Tabs>
-</template>
-<script>
-import Tabs from "../lib/Tabs.vue";
-import Tab from "../lib/Tab.vue";
+  <h1>Tabs 示例</h1>
+  <div class="demo">
+    <h2>常规用法</h2>
+    <div class="demo-component">
+      <component :is="Tabs1Demo"></component>
+    </div>
+    <div class="demo-actions">
+      <Button>查看代码</Button>
+    </div>
+    <div class="demo-code">
+      <pre><code>&lt;template&gt;
+  &lt;Switch v-model:value="bool" /&gt;
+&lt;/template&gt;
+&lt;script lang="ts"&gt;
+import Switch from "../lib/Swtich.vue";
 import { ref } from "vue";
-
 export default {
   components: {
-    Tabs,
-    Tab,
+    Switch,
   },
   setup() {
-    const x = ref("导航1");
-    return { x };
+    const bool = ref(false);
+    return {
+      bool,
+    };
+  },
+};
+&lt;/script&gt;
+ </code></pre>
+    </div>
+  </div>
+</template>
+
+
+<script lang="ts">
+import Button from "../lib/Button.vue";
+import Tabs1Demo from "./Tabs1.demo.vue";
+export default {
+  setup() {
+    return {
+      Button,
+      Tabs1Demo,
+    };
   },
 };
 </script>
+<style lang="scss" scoped>
+$border-color: #d9d9d9;
+.demo {
+  border: 1px solid $border-color;
+  margin: 16px 0 32px;
+  > h2 {
+    font-size: 20px;
+    padding: 8px 16px;
+    border-bottom: 1px solid $border-color;
+  }
+  &-component {
+    padding: 16px;
+  }
+  &-actions {
+    padding: 8px 16px;
+    border-top: 1px dashed $border-color;
+  }
+  &-code {
+    padding: 8px 16px;
+    border-top: 1px dashed $border-color;
+    > pre {
+      line-height: 1.1;
+      font-family: Consolas, "Courier New", Courier, monospace;
+      margin: 0;
+    }
+  }
+}
+</style>
