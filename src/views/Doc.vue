@@ -53,6 +53,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+$aside-index: 10;
 .layout {
   display: flex;
   flex-direction: column;
@@ -81,15 +82,15 @@ export default {
   }
 }
 aside {
-  background: #e3e3e3;
-  width: 200px;
+  background: rgb(90, 180, 176);
+  width: 150px;
   padding: 16px 0;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 20;
-  /* padding-top: 70px; */
+  padding-top: 70px;
   height: 100%;
+  z-index: $aside-index;
   > h2 {
     margin-bottom: 4px;
     padding: 0 16px;
@@ -102,19 +103,12 @@ aside {
         text-decoration: none;
       }
       .router-link-active {
-        background: rgb(90, 180, 176);
+        background: white;
       }
     }
   }
-  main {
-    overflow: auto;
-  }
-  /* 手机上才绝对定位 */
-  @media (max-width: 500px) {
-    position: fixed;
-    top: 68px;
-    left: 0;
-    /* padding-top: 70px; */
-  }
+}
+main {
+  overflow: auto;
 }
 </style> 
