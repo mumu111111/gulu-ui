@@ -6,9 +6,10 @@
       <component :is="Tabs1Demo"></component>
     </div>
     <div class="demo-actions">
-      <Button>查看代码</Button>
+      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+      <Button @click="showCode" v-else>查看代码</Button>
     </div>
-    <div class="demo-code">
+    <div class="demo-code" v-if="codeVisible">
       <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool" /&gt;
 &lt;/template&gt;
@@ -31,16 +32,21 @@ export default {
     </div>
   </div>
 </template>
-
-
 <script lang="ts">
 import Button from "../lib/Button.vue";
 import Tabs1Demo from "./Tabs1.demo.vue";
+import { ref } from "vue";
 export default {
   setup() {
+    const showCode = () => (codeVisible.value = true);
+    const hideCode = () => (codeVisible.value = false);
+    const codeVisible = ref(false);
     return {
       Button,
       Tabs1Demo,
+      codeVisible,
+      showCode,
+      hideCode,
     };
   },
 };
