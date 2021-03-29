@@ -1,38 +1,22 @@
 <template>
   <div>Dialog 示例</div>
-  <Button @click="toggle">toggle</Button>
-  <Dialog
-    v-model:visible="x"
-    :closeOnclickOverlay="false"
-    :ok="f1"
-    :cancel="f2"
-  >
-    <template v-slot:content>
-      <strong>hi</strong>
-      <div>hi2</div>
-    </template>
-    <template v-slot:title>
-      <strong>加粗的标题</strong>
-    </template>
-  </Dialog>
+  <Demo :component="Dialog1Demo" />
+  <Demo :component="Dialog2Demo" />
 </template>
-<script lang="ts">
-import { ref } from "vue";
-import Button from "../lib/Button.vue";
-import Dialog from "../lib/Dialog.vue";
-export default {
-  components: { Dialog },
-  setup() {
-    const x = ref(false);
-    const toggle = () => {
-      x.value = !x.value;
-    };
-    const f1 = () => {
-      return false;
-    };
-    const f2 = () => {};
 
-    return { x, toggle, f1, f2 };
+<script lang="ts">
+import Demo from "./Demo.vue";
+import Dialog1Demo from "./Dialog1.demo.vue";
+import Dialog2Demo from "./Dialog2.demo.vue";
+export default {
+  components: {
+    Demo,
+  },
+  setup() {
+    return {
+      Dialog1Demo,
+      Dialog2Demo,
+    };
   },
 };
 </script>
