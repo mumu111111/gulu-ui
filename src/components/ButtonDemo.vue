@@ -1,11 +1,9 @@
 <template>
   <div>
-    <div>Button 示例</div>
-    <!-- <Demo :component="Button1Demo" /> -->
+    <h1>Button 示例</h1>
     <div class="demo">
       <h2>常规用法</h2>
       <div class="demo-component">
-        <!-- <Switch1Demo /> -->
         <component :is="Button1Demo"></component>
       </div>
       <div class="demo-actions">
@@ -34,9 +32,8 @@ export default {
       </div>
     </div>
     <div class="demo">
-      <h2>常规用法</h2>
+      <h2>支持size</h2>
       <div class="demo-component">
-        <!-- <Switch1Demo /> -->
         <component :is="Button2Demo"></component>
       </div>
       <div class="demo-actions">
@@ -65,7 +62,7 @@ export default {
       </div>
     </div>
     <div class="demo">
-      <h2>常规用法</h2>
+      <h2>支持level</h2>
       <div class="demo-component">
         <!-- <Switch1Demo /> -->
         <component :is="Button3Demo"></component>
@@ -96,7 +93,7 @@ export default {
       </div>
     </div>
     <div class="demo">
-      <h2>常规用法</h2>
+      <h2>支持level</h2>
       <div class="demo-component">
         <!-- <Switch1Demo /> -->
         <component :is="Button4Demo"></component>
@@ -127,9 +124,8 @@ export default {
       </div>
     </div>
     <div class="demo">
-      <h2>常规用法</h2>
+      <h2>支持loading</h2>
       <div class="demo-component">
-        <!-- <Switch1Demo /> -->
         <component :is="Button5Demo"></component>
       </div>
       <div class="demo-actions">

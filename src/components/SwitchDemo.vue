@@ -1,11 +1,10 @@
 <template>
   <div>
     <div>
-      <h1>Switch 组件示例</h1>
+      <h1>Switch 示例</h1>
       <div class="demo">
         <h2>常规用法</h2>
         <div class="demo-component">
-          <!-- <Switch1Demo /> -->
           <component :is="Switch1Demo"></component>
         </div>
         <div class="demo-actions">
@@ -74,7 +73,6 @@ import Button from "../lib/Button.vue";
 import Switch1Demo from "./Switch1.demo.vue";
 import Switch2Demo from "./Switch2.demo.vue";
 import { ref } from "vue";
-console.log(Switch2Demo.__sourceCode);
 export default {
   components: {
     Switch1Demo,
@@ -84,7 +82,6 @@ export default {
   },
   setup() {
     const bool = ref(false);
-
     return {
       bool,
       Switch1Demo,

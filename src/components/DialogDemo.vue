@@ -1,5 +1,5 @@
 <template>
-  <div>Dialog 示例</div>
+  <h1>Dialog 示例</h1>
   <div class="demo">
     <h2>支持 disabled</h2>
     <div class="demo-component">
@@ -40,7 +40,6 @@ export default {
       <Button>查看代码</Button>
     </div>
     <div class="demo-code">
-      <!-- {{ Switch2Demo.__sourceCode }} -->
       <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool"  disabled /&gt;
 &lt;/template&gt;
