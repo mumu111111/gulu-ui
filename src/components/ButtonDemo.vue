@@ -6,11 +6,11 @@
       <div class="demo-component">
         <component :is="Button1Demo"></component>
       </div>
-     <div class="demo-actions">
-      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
-      <Button @click="showCode" v-else>查看代码</Button>
-    </div>
-    <div class="demo-code" v-if="codeVisible">
+      <div class="demo-actions">
+        <Button @click="hideCode(0)" v-if="codeVisible">隐藏代码</Button>
+        <Button @click="showCode(0)" v-else>查看代码</Button>
+      </div>
+      <div class="demo-code" v-if="codeVisible">
         <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool" /&gt;
 &lt;/template&gt;
@@ -37,11 +37,11 @@ export default {
       <div class="demo-component">
         <component :is="Button2Demo"></component>
       </div>
-     <div class="demo-actions">
-      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
-      <Button @click="showCode" v-else>查看代码</Button>
-    </div>
-    <div class="demo-code" v-if="codeVisible">
+      <div class="demo-actions">
+        <Button @click="hideCode(1)" v-if="codeVisible1">隐藏代码</Button>
+        <Button @click="showCode(1)" v-else>查看代码</Button>
+      </div>
+      <div class="demo-code" v-if="codeVisible1">
         <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool" /&gt;
 &lt;/template&gt;
@@ -68,11 +68,11 @@ export default {
       <div class="demo-component">
         <component :is="Button3Demo"></component>
       </div>
-     <div class="demo-actions">
-      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
-      <Button @click="showCode" v-else>查看代码</Button>
-    </div>
-    <div class="demo-code" v-if="codeVisible">
+      <div class="demo-actions">
+        <Button @click="hideCode(2)" v-if="codeVisible2">隐藏代码</Button>
+        <Button @click="showCode(2)" v-else>查看代码</Button>
+      </div>
+      <div class="demo-code" v-if="codeVisible2">
         <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool" /&gt;
 &lt;/template&gt;
@@ -100,10 +100,10 @@ export default {
         <component :is="Button4Demo"></component>
       </div>
       <div class="demo-actions">
-      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
-      <Button @click="showCode" v-else>查看代码</Button>
-    </div>
-    <div class="demo-code" v-if="codeVisible">
+        <Button @click="hideCode(3)" v-if="codeVisible3">隐藏代码</Button>
+        <Button @click="showCode(3)" v-else>查看代码</Button>
+      </div>
+      <div class="demo-code" v-if="codeVisible3">
         <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool" /&gt;
 &lt;/template&gt;
@@ -131,10 +131,10 @@ export default {
         <component :is="Button5Demo"></component>
       </div>
       <div class="demo-actions">
-      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
-      <Button @click="showCode" v-else>查看代码</Button>
-    </div>
-    <div class="demo-code" v-if="codeVisible">
+        <Button @click="hideCode(4)" v-if="codeVisible4">隐藏代码</Button>
+        <Button @click="showCode(4)" v-else>查看代码</Button>
+      </div>
+      <div class="demo-code" v-if="codeVisible4">
         <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool" /&gt;
 &lt;/template&gt;
@@ -160,6 +160,7 @@ export default {
 </template>
 
 <script lang="ts">
+import { ref } from "vue";
 import Button from "../lib/Button.vue";
 import Button1Demo from "./Button1.demo.vue";
 import Button2Demo from "./Button2.demo.vue";
@@ -168,6 +169,38 @@ import Button4Demo from "./Button4.demo.vue";
 import Button5Demo from "./Button5.demo.vue";
 export default {
   setup() {
+    const showCode = (t) => {
+      if (t == 0) {
+        codeVisible.value = true;
+      } else if (t == 1) {
+        codeVisible1.value = true;
+      } else if (t == 2) {
+        codeVisible2.value = true;
+      } else if (t == 3) {
+        codeVisible3.value = true;
+      } else if (t == 4) {
+        codeVisible4.value = true;
+      }
+    };
+    const hideCode = (t) => {
+      if (t == 0) {
+        codeVisible.value = false;
+      } else if (t == 1) {
+        codeVisible1.value = false;
+      } else if (t == 2) {
+        codeVisible2.value = false;
+      } else if (t == 3) {
+        codeVisible3.value = false;
+      } else if (t == 4) {
+        codeVisible4.value = false;
+      }
+    };
+    const codeVisible = ref(false);
+    const codeVisible1 = ref(false);
+    const codeVisible2 = ref(false);
+    const codeVisible3 = ref(false);
+    const codeVisible4 = ref(false);
+
     return {
       Button,
       Button1Demo,
@@ -175,6 +208,13 @@ export default {
       Button3Demo,
       Button4Demo,
       Button5Demo,
+      showCode,
+      hideCode,
+      codeVisible,
+      codeVisible1,
+      codeVisible2,
+      codeVisible3,
+      codeVisible4,
     };
   },
 };
