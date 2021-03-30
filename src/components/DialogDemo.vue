@@ -6,8 +6,8 @@
       <component :is="Dialog1Demo"></component>
     </div>
     <div class="demo-actions">
-      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
-      <Button @click="showCode" v-else>查看代码</Button>
+      <Button @click="hideCode(1)" v-if="codeVisible">隐藏代码</Button>
+      <Button @click="showCode(1)" v-else>查看代码</Button>
     </div>
     <div class="demo-code" v-if="codeVisible">
       <pre><code>&lt;template&gt;
@@ -38,10 +38,10 @@ export default {
       <component :is="Dialog2Demo"></component>
     </div>
     <div class="demo-actions">
-      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
-      <Button @click="showCode" v-else>查看代码</Button>
+      <Button @click="hideCode(2)" v-if="codeVisible1">隐藏代码</Button>
+      <Button @click="showCode(2)" v-else>查看代码</Button>
     </div>
-    <div class="demo-code" v-if="codeVisible">
+    <div class="demo-code" v-if="codeVisible1">
       <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool"  disabled /&gt;
 &lt;/template&gt;
@@ -66,15 +66,36 @@ export default {
 </template>
 
 <script lang="ts">
+import { ref } from "vue";
 import Button from "../lib/Button.vue";
 import Dialog1Demo from "./Dialog1.demo.vue";
 import Dialog2Demo from "./Dialog2.demo.vue";
 export default {
   setup() {
+    const showCode = (t) => {
+      if (t == 1) {
+        codeVisible.value = true;
+      } else {
+        codeVisible1.value = true;
+      }
+    };
+    const hideCode = (t) => {
+      if (t == 1) {
+        codeVisible.value = false;
+      } else {
+        codeVisible1.value = false;
+      }
+    };
+    const codeVisible = ref(false);
+    const codeVisible1 = ref(false);
     return {
       Button,
       Dialog1Demo,
       Dialog2Demo,
+      showCode,
+      hideCode,
+      codeVisible,
+      codeVisible1,
     };
   },
 };
