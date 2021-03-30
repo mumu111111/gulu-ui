@@ -2,7 +2,7 @@
   <div class="topnav">
     <router-link to="/" class="logo">
       <svg class="icon">
-        <use xlink:href="#icon-king"></use>
+        <use xlink:href="#icon-xigua1"></use>
       </svg>
     </router-link>
 
@@ -13,7 +13,7 @@
     </ul>
     <!-- <span class="toggleAside" @click="toggleMenu"></span> -->
     <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
-      <use xlink:href="#icon-menu"></use>
+      <use xlink:href="#icon-menu2"></use>
     </svg>
   </div>
 </template>
@@ -55,8 +55,8 @@ $aside-index: 16;
     max-width: 6em;
     margin-right: auto;
     > svg {
-      width: 32px;
-      height: 32px;
+      width: 42px;
+      height: 42px;
     }
   }
   > .menu {
@@ -71,13 +71,13 @@ $aside-index: 16;
   > .toggleAside {
     width: 32px;
     height: 32px;
-    background: red;
+    /* background: red; */
     position: absolute;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
     display: none;
-    background: fade-out(black, 0.9);
+    /* background: fade-out(black, 0.9); */
   }
   @media (max-width: 500px) {
     > .menu {
