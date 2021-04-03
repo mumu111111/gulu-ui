@@ -77,18 +77,19 @@ $aside-index: 10;
   }
   > main {
     flex-grow: 1;
-    padding: 16px;
     background: white;
+    height: 100vh;
+    overflow: auto;
+    padding: 60px 135px;
   }
 }
 aside {
   background: rgb(90, 180, 176);
-  width: 150px;
-  padding: 16px 0;
+  width: 250px;
+  padding: 100px 16px 0;
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 70px;
   height: 100%;
   z-index: $aside-index;
   > h2 {

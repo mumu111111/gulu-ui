@@ -38,7 +38,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$green: rgb(90, 180, 176);
+$green: #fff;
 $color: #007974;
 $aside-index: 16;
 .topnav {
