@@ -86,7 +86,7 @@ $aside-index: 10;
 aside {
   background: rgb(90, 180, 176);
   width: 250px;
-  padding: 100px 16px 0;
+  padding: 100px 0px 0;
   position: fixed;
   top: 0;
   left: 0;
