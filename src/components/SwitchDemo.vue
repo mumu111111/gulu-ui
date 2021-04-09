@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="markdown-body">
       <h1>Switch 示例</h1>
       <div class="demo">
         <h2>常规用法</h2>

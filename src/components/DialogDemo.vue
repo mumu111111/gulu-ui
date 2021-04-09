@@ -1,4 +1,5 @@
 <template>
+<div class="markdown-body">
   <h1>Dialog 示例</h1>
   <div class="demo">
     <h2>支持 disabled</h2>
@@ -62,6 +63,7 @@ export default {
 &lt;/script&gt;
  </code></pre>
     </div>
+  </div>
   </div>
 </template>
 

@@ -1,16 +1,17 @@
 <template>
-  <h1>Tabs 示例</h1>
-  <div class="demo">
-    <h2>常规用法</h2>
-    <div class="demo-component">
-      <component :is="Tabs1Demo"></component>
-    </div>
-    <div class="demo-actions">
-      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
-      <Button @click="showCode" v-else>查看代码</Button>
-    </div>
-    <div class="demo-code" v-if="codeVisible">
-      <pre><code>&lt;template&gt;
+  <div class="markdown-body">
+    <h1>Tabs 示例</h1>
+    <div class="demo">
+      <h2>常规用法</h2>
+      <div class="demo-component">
+        <component :is="Tabs1Demo"></component>
+      </div>
+      <div class="demo-actions">
+        <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+        <Button @click="showCode" v-else>查看代码</Button>
+      </div>
+      <div class="demo-code" v-if="codeVisible">
+        <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool" /&gt;
 &lt;/template&gt;
 &lt;script lang="ts"&gt;
@@ -29,6 +30,7 @@ export default {
 };
 &lt;/script&gt;
  </code></pre>
+      </div>
     </div>
   </div>
 </template>
