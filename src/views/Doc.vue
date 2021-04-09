@@ -80,13 +80,13 @@ $aside-index: 10;
     background: white;
     height: 100vh;
     overflow: auto;
-    padding: 60px 135px;
+    padding: 20px 25px;
   }
 }
 aside {
-  background: rgb(90, 180, 176);
-  width: 250px;
-  padding: 100px 0px 0;
+  background: #fff;
+  width: 150px;
+  padding: 78px 0px 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -102,6 +102,7 @@ aside {
         display: block;
         padding: 4px 16px;
         text-decoration: none;
+        color: green;
       }
       .router-link-active {
         background: white;

@@ -69,8 +69,8 @@ $aside-index: 16;
     }
   }
   > .toggleAside {
-    width: 32px;
-    height: 32px;
+    width: 21px;
+    height: 21px;
     /* background: red; */
     position: absolute;
     left: 16px;
