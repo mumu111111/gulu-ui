@@ -225,6 +225,7 @@ $border-color: #d9d9d9;
   border: 1px solid $border-color;
   margin: 16px 0 32px;
   > h2 {
+    margin-top: 0;
     font-size: 20px;
     padding: 8px 16px;
     border-bottom: 1px solid $border-color;

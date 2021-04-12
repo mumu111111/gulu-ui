@@ -1,17 +1,17 @@
 <template>
-<div class="markdown-body">
-  <h1>Dialog 示例</h1>
-  <div class="demo">
-    <h2>支持 disabled</h2>
-    <div class="demo-component">
-      <component :is="Dialog1Demo"></component>
-    </div>
-    <div class="demo-actions">
-      <Button @click="hideCode(1)" v-if="codeVisible">隐藏代码</Button>
-      <Button @click="showCode(1)" v-else>查看代码</Button>
-    </div>
-    <div class="demo-code" v-if="codeVisible">
-      <pre><code>&lt;template&gt;
+  <div class="markdown-body">
+    <h1>Dialog 示例</h1>
+    <div class="demo">
+      <h2>支持 disabled</h2>
+      <div class="demo-component">
+        <component :is="Dialog1Demo"></component>
+      </div>
+      <div class="demo-actions">
+        <Button @click="hideCode(1)" v-if="codeVisible">隐藏代码</Button>
+        <Button @click="showCode(1)" v-else>查看代码</Button>
+      </div>
+      <div class="demo-code" v-if="codeVisible">
+        <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool"  disabled /&gt;
 &lt;/template&gt;
 &lt;script lang="ts"&gt;
@@ -30,20 +30,20 @@ export default {
 };
 &lt;/script&gt;
  </code></pre>
+      </div>
     </div>
-  </div>
 
-  <div class="demo">
-    <h2>支持 disabled</h2>
-    <div class="demo-component">
-      <component :is="Dialog2Demo"></component>
-    </div>
-    <div class="demo-actions">
-      <Button @click="hideCode(2)" v-if="codeVisible1">隐藏代码</Button>
-      <Button @click="showCode(2)" v-else>查看代码</Button>
-    </div>
-    <div class="demo-code" v-if="codeVisible1">
-      <pre><code>&lt;template&gt;
+    <div class="demo">
+      <h2>支持 disabled</h2>
+      <div class="demo-component">
+        <component :is="Dialog2Demo"></component>
+      </div>
+      <div class="demo-actions">
+        <Button @click="hideCode(2)" v-if="codeVisible1">隐藏代码</Button>
+        <Button @click="showCode(2)" v-else>查看代码</Button>
+      </div>
+      <div class="demo-code" v-if="codeVisible1">
+        <pre><code>&lt;template&gt;
   &lt;Switch v-model:value="bool"  disabled /&gt;
 &lt;/template&gt;
 &lt;script lang="ts"&gt;
@@ -62,8 +62,8 @@ export default {
 };
 &lt;/script&gt;
  </code></pre>
+      </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -109,6 +109,7 @@ $border-color: #d9d9d9;
   border: 1px solid $border-color;
   margin: 16px 0 32px;
   > h2 {
+    margin-top: 0px;
     font-size: 20px;
     padding: 8px 16px;
     border-bottom: 1px solid $border-color;

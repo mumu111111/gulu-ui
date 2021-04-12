@@ -102,10 +102,11 @@ aside {
         display: block;
         padding: 4px 16px;
         text-decoration: none;
-        color: green;
+        color: #000;
       }
       .router-link-active {
         background: white;
+        color: green;
       }
     }
   }
