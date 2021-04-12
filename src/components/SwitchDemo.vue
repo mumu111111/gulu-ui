@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="markdown-body">
-      <h1>Switch 示例</h1>
+      <h2>Switch 开关</h2>
+      <!-- <h3>用途</h3> -->
+      <p>需要表示开关状态/两种状态之间的切换时。</p>
       <div class="demo">
         <h2>常规用法</h2>
         <div class="demo-component">
@@ -118,6 +120,7 @@ $border-color: #d9d9d9;
   border: 1px solid $border-color;
   margin: 16px 0 32px;
   > h2 {
+    margin-top: 0px;
     font-size: 20px;
     padding: 8px 16px;
     border-bottom: 1px solid $border-color;
