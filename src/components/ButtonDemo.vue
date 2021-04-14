@@ -82,7 +82,7 @@ export default {
       </div>
     </div>
     <div class="demo">
-      <h2>支持level</h2>
+      <h2>支持禁用</h2>
       <div class="demo-component">
         <component :is="Button4Demo"></component>
       </div>
@@ -93,9 +93,9 @@ export default {
       <div class="demo-code" v-if="codeVisible3">
         <pre><code>
 &lt;template&gt;
-  &lt;Button theme="button"&gt; 普通按钮 &lt;/Button&gt;
-  &lt;Button theme="link"&gt;链接按钮 &lt;/Button&gt;
-  &lt;Button theme="text"&gt; 文本按钮 &lt;/Button&gt;
+  &lt;Button theme="button" disabled&gt; 普通禁用按钮 &lt;/Button&gt;
+  &lt;Button theme="link" disabled&gt;链接禁用按钮 &lt;/Button&gt;
+  &lt;Button theme="text" disabled&gt; 文本禁用按钮 &lt;/Button&gt;
 &lt;/template>
 
 &lt;script lang="ts" &gt;
