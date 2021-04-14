@@ -1,6 +1,8 @@
 <template>
   <div class="markdown-body">
-    <h1>Button 示例</h1>
+    <h1>Button 按钮</h1>
+    <h3></h3>
+    <p>支持不同需求下的按钮，响应用户点击行为，触发相应的业务逻辑</p>
     <div class="demo">
       <h2>常规用法</h2>
       <div class="demo-component">
@@ -120,9 +122,8 @@ export default {
       <div class="demo-code" v-if="codeVisible4">
         <pre><code>
 &lt;template&gt;
-  &lt;Button theme="button"&gt; 普通按钮 &lt;/Button&gt;
-  &lt;Button theme="link"&gt;链接按钮 &lt;/Button&gt;
-  &lt;Button theme="text"&gt; 文本按钮 &lt;/Button&gt;
+  &lt;Button theme="button"  loading &gt; 加载中 &lt;/Button&gt;
+  &lt;Button theme="button"&gt;加载完毕 &lt;/Button&gt;
 &lt;/template>
 
 &lt;script lang="ts" &gt;
