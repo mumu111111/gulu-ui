@@ -1,7 +1,6 @@
 <template>
   <div class="markdown-body">
-    <h1>Button 按钮</h1>
-    <h3></h3>
+    <h2>Button 按钮</h2>
     <p>支持不同需求下的按钮，响应用户点击行为，触发相应的业务逻辑</p>
     <div class="demo">
       <h2>常规用法</h2>
@@ -141,12 +140,12 @@ export default {
 
 <script lang="ts">
 import { ref } from "vue";
-import Button from "../lib/Button.vue";
 import Button1Demo from "./Button1.demo.vue";
 import Button2Demo from "./Button2.demo.vue";
 import Button3Demo from "./Button3.demo.vue";
 import Button4Demo from "./Button4.demo.vue";
 import Button5Demo from "./Button5.demo.vue";
+import Button from "../lib/Button.vue";
 export default {
   setup() {
     const showCode = (t) => {
@@ -182,7 +181,6 @@ export default {
     const codeVisible4 = ref(false);
 
     return {
-      Button,
       Button1Demo,
       Button2Demo,
       Button3Demo,
@@ -195,6 +193,7 @@ export default {
       codeVisible2,
       codeVisible3,
       codeVisible4,
+      Button,
     };
   },
 };

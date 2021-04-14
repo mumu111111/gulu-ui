@@ -1,6 +1,6 @@
 <template>
   <div class="markdown-body">
-    <h1>Tabs 标签页</h1>
+    <h2>Tabs 标签页</h2>
     <p>选项内容切换</p>
     <div class="demo">
       <h2>常规用法</h2>
@@ -72,9 +72,9 @@ export default {
   </div>
 </template>
 <script lang="ts">
-import Button from "../lib/Button.vue";
 import Tabs1Demo from "./Tabs1.demo.vue";
 import Tabs2Demo from "./Tabs2.demo.vue";
+import Button from "../lib/Button.vue";
 import { ref } from "vue";
 export default {
   setup() {
@@ -95,13 +95,13 @@ export default {
     const codeVisible = ref(false);
     const codeVisible1 = ref(false);
     return {
-      Button,
       Tabs1Demo,
       Tabs2Demo,
       codeVisible,
       codeVisible1,
       showCode,
       hideCode,
+      Button,
     };
   },
 };

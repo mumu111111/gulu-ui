@@ -1,6 +1,6 @@
 <template>
   <div class="markdown-body">
-    <h1>Dialog 弹框</h1>
+    <h2>Dialog 弹框</h2>
     <p>
       需要用户处理事务，又不希望跳转页面以致打断工作流程时，可以使用 Dialog
       在当前页面正中打开一个浮层，承载相应的操作。
@@ -73,9 +73,9 @@ export default {
 
 <script lang="ts">
 import { ref } from "vue";
-import Button from "../lib/Button.vue";
 import Dialog1Demo from "./Dialog1.demo.vue";
 import Dialog2Demo from "./Dialog2.demo.vue";
+import Button from "../lib/Button.vue";
 export default {
   setup() {
     const showCode = (t) => {
@@ -95,13 +95,13 @@ export default {
     const codeVisible = ref(false);
     const codeVisible1 = ref(false);
     return {
-      Button,
       Dialog1Demo,
       Dialog2Demo,
       showCode,
       hideCode,
       codeVisible,
       codeVisible1,
+      Button,
     };
   },
 };

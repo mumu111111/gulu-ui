@@ -72,9 +72,9 @@ export default {
 </template>
 <script lang="ts">
 import Switch from "../lib/Swtich.vue";
-import Button from "../lib/Button.vue";
 import Switch1Demo from "./Switch1.demo.vue";
 import Switch2Demo from "./Switch2.demo.vue";
+import Button from "../lib/Button.vue";
 import { ref } from "vue";
 export default {
   components: {
@@ -110,6 +110,7 @@ export default {
       hideCode,
       codeVisible,
       codeVisible1,
+      Button,
     };
   },
 };
