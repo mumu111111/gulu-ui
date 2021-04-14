@@ -66,9 +66,9 @@ export default {
       <div class="demo-code" v-if="codeVisible2">
         <pre><code>
 &lt;template&gt;
-  &lt;Button theme="button"&gt; 普通按钮 &lt;/Button&gt;
-  &lt;Button theme="link"&gt;链接按钮 &lt;/Button&gt;
-  &lt;Button theme="text"&gt; 文本按钮 &lt;/Button&gt;
+  &lt;Button theme="button" level="main"&gt; 主要按钮 &lt;/Button&gt;
+  &lt;Button theme="button" &gt;普通按钮 &lt;/Button&gt;
+  &lt;Button theme="button" level="danger"&gt; 危险按钮 &lt;/Button&gt;
 &lt;/template>
 
 &lt;script lang="ts" &gt;
