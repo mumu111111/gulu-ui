@@ -8,7 +8,7 @@
       <Button>普普通</Button>
       <Button size="small">小小小</Button>
     </div>
-    <div>
+    <!-- <div>
       <Button theme="link" size="big">大大大</Button>
       <Button theme="link">普普通</Button>
       <Button size="small" theme="link">小小小</Button>
@@ -17,7 +17,7 @@
       <Button size="big" theme="text">大大大</Button>
       <Button theme="text">普普通</Button>
       <Button size="small" theme="text">小小小</Button>
-    </div>
+    </div> -->
   </div>
 </template>
 

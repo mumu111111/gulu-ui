@@ -11,25 +11,20 @@
         <Button @click="showCode(0)" v-else>查看代码</Button>
       </div>
       <div class="demo-code" v-if="codeVisible">
-        <pre><code>&lt;template&gt;
-  &lt;Switch v-model:value="bool" /&gt;
-&lt;/template&gt;
-&lt;script lang="ts"&gt;
-import Switch from "../lib/Swtich.vue";
-import { ref } from "vue";
+        <pre><code>
+&lt;template&gt;
+  &lt;Button theme="button"&gt; 普通按钮 &lt;/Button&gt;
+  &lt;Button theme="link"&gt;链接按钮 &lt;/Button&gt;
+  &lt;Button theme="text"&gt; 文本按钮 &lt;/Button&gt;
+&lt;/template>
+
+&lt;script lang="ts" &gt;
+import {Button} from '../lib/Button.vue';
 export default {
-  components: {
-    Switch,
-  },
-  setup() {
-    const bool = ref(false);
-    return {
-      bool,
-    };
-  },
-};
+  components:{ Button }
+}
 &lt;/script&gt;
- </code></pre>
+   </code></pre>
       </div>
     </div>
     <div class="demo">
@@ -42,25 +37,21 @@ export default {
         <Button @click="showCode(1)" v-else>查看代码</Button>
       </div>
       <div class="demo-code" v-if="codeVisible1">
-        <pre><code>&lt;template&gt;
-  &lt;Switch v-model:value="bool" /&gt;
-&lt;/template&gt;
-&lt;script lang="ts"&gt;
-import Switch from "../lib/Swtich.vue";
-import { ref } from "vue";
+        <pre><code>
+&lt;template&gt;
+  &lt;Button  size="big"&gt; 大大大 &lt;/Button&gt;
+  &lt;Button &gt;普普通 &lt;/Button&gt;
+  &lt;Button  size="small"&gt; 小小小 &lt;/Button&gt;
+&lt;/template>
+
+&lt;script lang="ts" &gt;
+import {Button} from '../lib/Button.vue';
+
 export default {
-  components: {
-    Switch,
-  },
-  setup() {
-    const bool = ref(false);
-    return {
-      bool,
-    };
-  },
-};
+  components:{ Button }
+}
 &lt;/script&gt;
- </code></pre>
+   </code></pre>
       </div>
     </div>
     <div class="demo">
@@ -73,25 +64,21 @@ export default {
         <Button @click="showCode(2)" v-else>查看代码</Button>
       </div>
       <div class="demo-code" v-if="codeVisible2">
-        <pre><code>&lt;template&gt;
-  &lt;Switch v-model:value="bool" /&gt;
-&lt;/template&gt;
-&lt;script lang="ts"&gt;
-import Switch from "../lib/Swtich.vue";
-import { ref } from "vue";
+        <pre><code>
+&lt;template&gt;
+  &lt;Button theme="button"&gt; 普通按钮 &lt;/Button&gt;
+  &lt;Button theme="link"&gt;链接按钮 &lt;/Button&gt;
+  &lt;Button theme="text"&gt; 文本按钮 &lt;/Button&gt;
+&lt;/template>
+
+&lt;script lang="ts" &gt;
+import {Button} from '../lib/Button.vue';
+
 export default {
-  components: {
-    Switch,
-  },
-  setup() {
-    const bool = ref(false);
-    return {
-      bool,
-    };
-  },
-};
+  components:{ Button }
+}
 &lt;/script&gt;
- </code></pre>
+   </code></pre>
       </div>
     </div>
     <div class="demo">
@@ -104,25 +91,21 @@ export default {
         <Button @click="showCode(3)" v-else>查看代码</Button>
       </div>
       <div class="demo-code" v-if="codeVisible3">
-        <pre><code>&lt;template&gt;
-  &lt;Switch v-model:value="bool" /&gt;
-&lt;/template&gt;
-&lt;script lang="ts"&gt;
-import Switch from "../lib/Swtich.vue";
-import { ref } from "vue";
+        <pre><code>
+&lt;template&gt;
+  &lt;Button theme="button"&gt; 普通按钮 &lt;/Button&gt;
+  &lt;Button theme="link"&gt;链接按钮 &lt;/Button&gt;
+  &lt;Button theme="text"&gt; 文本按钮 &lt;/Button&gt;
+&lt;/template>
+
+&lt;script lang="ts" &gt;
+import {Button} from '../lib/Button.vue';
+
 export default {
-  components: {
-    Switch,
-  },
-  setup() {
-    const bool = ref(false);
-    return {
-      bool,
-    };
-  },
-};
+  components:{ Button }
+}
 &lt;/script&gt;
- </code></pre>
+   </code></pre>
       </div>
     </div>
     <div class="demo">
@@ -135,25 +118,21 @@ export default {
         <Button @click="showCode(4)" v-else>查看代码</Button>
       </div>
       <div class="demo-code" v-if="codeVisible4">
-        <pre><code>&lt;template&gt;
-  &lt;Switch v-model:value="bool" /&gt;
-&lt;/template&gt;
-&lt;script lang="ts"&gt;
-import Switch from "../lib/Swtich.vue";
-import { ref } from "vue";
+        <pre><code>
+&lt;template&gt;
+  &lt;Button theme="button"&gt; 普通按钮 &lt;/Button&gt;
+  &lt;Button theme="link"&gt;链接按钮 &lt;/Button&gt;
+  &lt;Button theme="text"&gt; 文本按钮 &lt;/Button&gt;
+&lt;/template>
+
+&lt;script lang="ts" &gt;
+import {Button} from '../lib/Button.vue';
+
 export default {
-  components: {
-    Switch,
-  },
-  setup() {
-    const bool = ref(false);
-    return {
-      bool,
-    };
-  },
-};
+  components:{ Button }
+}
 &lt;/script&gt;
- </code></pre>
+   </code></pre>
       </div>
     </div>
   </div>
