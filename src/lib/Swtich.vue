@@ -47,6 +47,9 @@ button {
       margin-left: -4px;
     }
   }
+  &[disabled] {
+    cursor: not-allowed;
+  }
 }
 
 span {
