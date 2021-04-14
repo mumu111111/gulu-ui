@@ -12,29 +12,31 @@
         <Button @click="showCode" v-else>查看代码</Button>
       </div>
       <div class="demo-code" v-if="codeVisible">
-        <pre><code>&lt;template&gt;
-  &lt;Switch v-model:value="bool" /&gt;
+        <pre><code>
+&lt;template&gt;
+  &lt;Tabs v-model:selected="selected" &gt;
+    &lt;div title="导航1"&gt;内容1&lt;/div&gt;
+    &lt;div title="导航2"&gt;内容2&lt;/div&gt;
+    &lt;div title="导航3"&gt;内容3&lt;/div&gt;
+  &lt;/Tabs&gt;
 &lt;/template&gt;
 &lt;script lang="ts"&gt;
-import Switch from "../lib/Swtich.vue";
-import { ref } from "vue";
+import {Tabs} from '../../../../lib/index.ts';
+import {ref} from 'vue';
 export default {
-  components: {
-    Switch,
-  },
-  setup() {
-    const bool = ref(false);
-    return {
-      bool,
-    };
-  },
-};
+  components:{Tabs},
+  setup(){
+    const selected = ref('导航1')
+    return {selected}
+  }
+}
 &lt;/script&gt;
- </code></pre>
+   
+   </code></pre>
       </div>
     </div>
     <div class="demo">
-      <h2>常规用法2</h2>
+      <h2>支持disabled</h2>
       <div class="demo-component">
         <component :is="Tabs2Demo"></component>
       </div>
@@ -43,25 +45,28 @@ export default {
         <Button @click="showCode" v-else>查看代码</Button>
       </div>
       <div class="demo-code" v-if="codeVisible">
-        <pre><code>&lt;template&gt;
-  &lt;Switch v-model:value="bool" /&gt;
+        <pre><code>
+&lt;template&gt;
+  &lt;Tabs v-model:selected="selected" &gt;
+    &lt;div title="导航1"&gt;内容1&lt;/div&gt;
+    &lt;div title="导航2"&gt;内容2&lt;/div&gt;
+    &lt;div title="导航3"&gt;内容3&lt;/div&gt;
+
+  &lt;/Tabs&gt;
 &lt;/template&gt;
 &lt;script lang="ts"&gt;
-import Switch from "../lib/Swtich.vue";
-import { ref } from "vue";
+import {Tabs} from '../../../../lib/index.ts';
+import {ref} from 'vue';
 export default {
-  components: {
-    Switch,
-  },
-  setup() {
-    const bool = ref(false);
-    return {
-      bool,
-    };
-  },
-};
+  components:{Tabs},
+  setup(){
+    const selected = ref('导航1')
+    return {selected}
+  }
+}
 &lt;/script&gt;
- </code></pre>
+   
+   </code></pre>
       </div>
     </div>
   </div>
