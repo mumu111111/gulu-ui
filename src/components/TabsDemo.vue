@@ -15,16 +15,17 @@
         <pre><code>
 &lt;template&gt;
   &lt;Tabs v-model:selected="selected" &gt;
-    &lt;div title="导航1"&gt;内容1&lt;/div&gt;
-    &lt;div title="导航2"&gt;内容2&lt;/div&gt;
-    &lt;div title="导航3"&gt;内容3&lt;/div&gt;
+    &lt;Tab title="导航1"&gt;内容1&lt;/Tab&gt;
+    &lt;Tab title="导航2"&gt;内容2&lt;/Tab&gt;
+    &lt;Tab title="导航3"&gt;内容3&lt;/Tab&gt;
   &lt;/Tabs&gt;
 &lt;/template&gt;
 &lt;script lang="ts"&gt;
-import {Tabs} from '../../../../lib/index.ts';
+import Tabs from "../lib/Tabs.vue";
+import Tab from "../lib/Tab.vue";
 import {ref} from 'vue';
 export default {
-  components:{Tabs},
+  components:{Tabs,Tab},
   setup(){
     const selected = ref('导航1')
     return {selected}
@@ -47,21 +48,22 @@ export default {
       <div class="demo-code" v-if="codeVisible1">
         <pre><code>
 &lt;template&gt;
-  &lt;Tabs v-model:selected="selected" &gt;
-    &lt;div title="导航1"&gt;内容1&lt;/div&gt;
-    &lt;div title="导航2"&gt;内容2&lt;/div&gt;
-    &lt;div title="导航3"&gt;内容3&lt;/div&gt;
-
+  &lt;Tabs v-model:selected="selected" :disabled="disabled" &gt;
+    &lt;Tab title="导航1"&gt;内容1&lt;/Tab&gt;
+    &lt;Tab title="导航2"&gt;内容2&lt;/Tab&gt;
+    &lt;Tab title="导航3"&gt;内容3&lt;/Tab&gt;
   &lt;/Tabs&gt;
 &lt;/template&gt;
 &lt;script lang="ts"&gt;
-import {Tabs} from '../../../../lib/index.ts';
+import Tabs from "../lib/Tabs.vue";
+import Tab from "../lib/Tab.vue";
 import {ref} from 'vue';
 export default {
-  components:{Tabs},
+  components:{Tabs, Tab},
   setup(){
     const selected = ref('导航1')
-    return {selected}
+    const disabled = ref(['导航2'])
+    return {selected, disabled}
   }
 }
 &lt;/script&gt;
@@ -74,8 +76,8 @@ export default {
 <script lang="ts">
 import Tabs1Demo from "./Tabs1.demo.vue";
 import Tabs2Demo from "./Tabs2.demo.vue";
-import Button from "../lib/Button.vue";
 import { ref } from "vue";
+import Button from "../lib/Button.vue";
 export default {
   setup() {
     const showCode = (t) => {
