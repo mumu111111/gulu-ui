@@ -39,9 +39,9 @@ export default {
       <div class="demo-code" v-if="codeVisible1">
         <pre><code>
 &lt;template&gt;
-  &lt;Button  size="big"&gt; 大大大 &lt;/Button&gt;
-  &lt;Button &gt;普普通 &lt;/Button&gt;
-  &lt;Button  size="small"&gt; 小小小 &lt;/Button&gt;
+  &lt;Button  size="big"&gt; 大按钮 &lt;/Button&gt;
+  &lt;Button &gt;普通按钮 &lt;/Button&gt;
+  &lt;Button  size="small"&gt; 小按钮 &lt;/Button&gt;
 &lt;/template>
 
 &lt;script lang="ts" &gt;
