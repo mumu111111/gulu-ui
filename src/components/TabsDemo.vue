@@ -8,8 +8,8 @@
         <component :is="Tabs1Demo"></component>
       </div>
       <div class="demo-actions">
-        <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
-        <Button @click="showCode" v-else>查看代码</Button>
+        <Button @click="hideCode(1)" v-if="codeVisible">隐藏代码</Button>
+        <Button @click="showCode(1)" v-else>查看代码</Button>
       </div>
       <div class="demo-code" v-if="codeVisible">
         <pre><code>
@@ -41,10 +41,10 @@ export default {
         <component :is="Tabs2Demo"></component>
       </div>
       <div class="demo-actions">
-        <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
-        <Button @click="showCode" v-else>查看代码</Button>
+        <Button @click="hideCode(2)" v-if="codeVisible1">隐藏代码</Button>
+        <Button @click="showCode(2)" v-else>查看代码</Button>
       </div>
-      <div class="demo-code" v-if="codeVisible">
+      <div class="demo-code" v-if="codeVisible1">
         <pre><code>
 &lt;template&gt;
   &lt;Tabs v-model:selected="selected" &gt;
@@ -78,14 +78,28 @@ import Tabs2Demo from "./Tabs2.demo.vue";
 import { ref } from "vue";
 export default {
   setup() {
-    const showCode = () => (codeVisible.value = true);
-    const hideCode = () => (codeVisible.value = false);
+    const showCode = (t) => {
+      if (t == 1) {
+        codeVisible.value = true;
+      } else {
+        codeVisible1.value = true;
+      }
+    };
+    const hideCode = (t) => {
+      if (t == 1) {
+        codeVisible.value = false;
+      } else {
+        codeVisible1.value = false;
+      }
+    };
     const codeVisible = ref(false);
+    const codeVisible1 = ref(false);
     return {
       Button,
       Tabs1Demo,
       Tabs2Demo,
       codeVisible,
+      codeVisible1,
       showCode,
       hideCode,
     };
