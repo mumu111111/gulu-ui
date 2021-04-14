@@ -1,6 +1,10 @@
 <template>
   <div class="markdown-body">
-    <h1>Dialog 示例</h1>
+    <h1>Dialog 弹框</h1>
+    <p>
+      需要用户处理事务，又不希望跳转页面以致打断工作流程时，可以使用 Dialog
+      在当前页面正中打开一个浮层，承载相应的操作。
+    </p>
     <div class="demo">
       <h2>支持 disabled</h2>
       <div class="demo-component">

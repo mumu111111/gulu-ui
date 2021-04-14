@@ -13,6 +13,9 @@
         "
         :key="index"
         :class="{ selected: t == selected }"
+        :style="
+          disabled.indexOf(t) >= 0 ? 'cursor: not-allowed' : 'cursor:pointer'
+        "
         @click="select(t)"
       >
         {{ t }}
@@ -31,12 +34,16 @@
   </div>
 </template>
 <script lang="ts">
-import { onMounted, onUpdated, ref, watchEffect } from "vue";
+import { onMounted, onUpdated, ref, watchEffect, computed } from "vue";
 import Tab from "./Tab.vue";
 export default {
   props: {
     selected: {
       type: String,
+    },
+    disabled: {
+      type: Array,
+      default: [],
     },
   },
   setup(props, context) {
@@ -70,9 +77,22 @@ export default {
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
-    const select = (t) => {
-      context.emit("update:selected", t);
+    const select = (title: string) => {
+      if (props.disabled.indexOf(title) < 0) {
+        context.emit("update:selected", title);
+        console.log(
+          "2223222222",
+          defaults.filter((item) => item.props.title === title)[0]
+        );
+        return defaults.filter((item) => item.props.title === title)[0];
+      }
     };
+    // const current = computed(() => {
+    //   return select(props.selected);
+    // });
+    // const select = (t) => {
+    //   context.emit("update:selected", t);
+    // };
     return { defaults, titles, select, selectItem, indicator, container };
   },
 };
