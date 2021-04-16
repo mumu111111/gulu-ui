@@ -1,9 +1,10 @@
 <template>
   <article class="markdown-body">
-    <h1>介绍</h1>
+    <h2>介绍</h2>
     <p>V UI 是一款基于 Vue 3 和 TypeScript 的 UI 组件库。</p>
-    <p>这款组件库其实是我为了学习 Vue 3而写的，尽量不采用第三方库。</p>
-    <p>不建议你将此 UI库用于生产环境。仅供学习参考。</p>
-    下一节：<a href="#/doc/install">安装</a>
+    <p>项目是为了学习 Vue 3而写的，尽量不采用第三方库。</p>
+    <p>未发布到npm上。</p>
+    <h2>源码</h2>
+    <p>如果对官网和组件源码感兴趣，可以访问我的 GitHub 查看源码。</p>
   </article>
 </template>
