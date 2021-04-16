@@ -5,6 +5,9 @@
     <p>项目是为了学习 Vue 3而写的，尽量不采用第三方库。</p>
     <p>未发布到npm上。</p>
     <h2>源码</h2>
-    <p>如果对官网和组件源码感兴趣，可以访问我的 GitHub 查看源码。</p>
+    <p>
+      如果对官网和组件源码感兴趣，可以访问我的
+      <a href="https://github.com/mumu111111/gulu-ui">GitHub</a> 查看源码。
+    </p>
   </article>
 </template>

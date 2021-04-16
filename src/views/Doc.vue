@@ -57,7 +57,7 @@ $aside-index: 10;
   }
   > .content {
     flex-grow: 1;
-    padding-top: 60px;
+    padding-top: 100px;
     padding-left: 156px;
     @media (max-width: 500px) {
       padding-left: 0;
@@ -79,24 +79,28 @@ $aside-index: 10;
 }
 aside {
   background: #fff;
-  width: 150px;
-  padding: 78px 0px 0;
+  width: 180px;
+  padding: 100px 0px 0;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   z-index: $aside-index;
+  border-right: 1px solid #e8e8e8;
   > h2 {
     margin-bottom: 4px;
-    padding: 0 16px;
+    padding: 4px 16px;
+    font-size: 20px;
+    font-weight: 700;
   }
   > ol {
     > li {
       > a {
         display: block;
-        padding: 4px 16px;
+        padding: 10px 30px;
         text-decoration: none;
-        color: #000;
+        color: #333;
+        font-size: 18px;
       }
       .router-link-active {
         background: white;

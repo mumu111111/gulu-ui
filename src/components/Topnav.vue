@@ -51,6 +51,7 @@ $aside-index: 16;
   left: 0;
   width: 100%;
   z-index: $aside-index; //不被挡住
+  box-shadow: 0 5px 5px rgb(51 51 51 / 10%);
   > .logo {
     max-width: 6em;
     margin-right: auto;
