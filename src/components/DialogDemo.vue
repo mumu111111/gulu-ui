@@ -6,7 +6,7 @@
       在当前页面正中打开一个浮层，承载相应的操作。
     </p>
     <div class="demo">
-      <h2>支持 disabled</h2>
+      <h2>基本用法</h2>
       <div class="demo-component">
         <component :is="Dialog1Demo"></component>
       </div>
@@ -15,30 +15,59 @@
         <Button @click="showCode(1)" v-else>查看代码</Button>
       </div>
       <div class="demo-code" v-if="codeVisible">
-        <pre><code>&lt;template&gt;
-  &lt;Switch v-model:value="bool"  disabled /&gt;
+        <pre><code>
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;Button @click="toggle"&gt;打开对话框&lt;/Button&gt;
+    &lt;Dialog
+      v-model:visible="visible"
+      :closeOnClickOverlay="false"
+      :ok="confirmFn"
+    &gt;
+      &lt;template v-slot:title&gt;
+        &lt;strong标题&lt;/strong&gt;
+      &lt;/template&gt;
+      &lt;template v-slot:content&gt;
+        &lt;div&gt;内容1&lt;/div&gt;
+        &lt;div&gt;内容2&lt;/div&gt;
+      &lt;/template&gt;
+    &lt;/Dialog&gt;
+  &lt;/div&gt;
 &lt;/template&gt;
-&lt;script lang="ts"&gt;
-import Switch from "../lib/Swtich.vue"; 
+
+&lt;/script lang="ts"&gt;
+import Dialog from "../lib/Dialog.vue";
+import Button from "../lib/Button.vue";
 import { ref } from "vue";
+import { openDialog } from "../lib/openDialog";
 export default {
   components: {
-    Switch,
+    Dialog,
+    Button,
   },
   setup() {
-    const bool = ref(false);
+    const visible = ref(false);
+    const toggle = () => {
+      visible.value = !visible.value;
+    };
+    const confirmFn = () => {
+      return false;
+    };
     return {
-      bool,
+      visible,
+      toggle,
+      confirmFn,
     };
   },
 };
 &lt;/script&gt;
+
  </code></pre>
       </div>
     </div>
 
     <div class="demo">
-      <h2>支持 disabled</h2>
+      <h2>函数式调用对话框</h2>
       <div class="demo-component">
         <component :is="Dialog2Demo"></component>
       </div>
@@ -47,20 +76,52 @@ export default {
         <Button @click="showCode(2)" v-else>查看代码</Button>
       </div>
       <div class="demo-code" v-if="codeVisible1">
-        <pre><code>&lt;template&gt;
-  &lt;Switch v-model:value="bool"  disabled /&gt;
+        <pre><code>
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;Button @click="toggle"&gt;打开对话框&lt;/Button&gt;
+    &lt;Dialog
+      v-model:visible="visible"
+      :closeOnClickOverlay="false"
+      :ok="confirmFn"
+    &gt;
+      &lt;template v-slot:title&gt;
+        &lt;strong标题&lt;/strong&gt;
+      &lt;/template&gt;
+      &lt;template v-slot:content&gt;
+        &lt;div&gt;内容1&lt;/div&gt;
+        &lt;div&gt;内容2&lt;/div&gt;
+      &lt;/template&gt;
+    &lt;/Dialog&gt;
+  &lt;/div&gt;
 &lt;/template&gt;
-&lt;script lang="ts"&gt;
-import Switch from "../lib/Swtich.vue"; 
+
+
+&lt;/script lang="ts"&gt;
+import Dialog from "../lib/Dialog.vue";
+import Button from "../lib/Button.vue";
 import { ref } from "vue";
+import { openDialog } from "../lib/openDialog";
 export default {
   components: {
-    Switch,
+    Dialog,
+    Button,
   },
   setup() {
-    const bool = ref(false);
+    const showDialog = () => {
+      openDialog({
+        title: h("strong", {}, "标题"),
+        content: "内容",
+        ok() {
+          console.log("ok");
+        },
+        cancel() {
+          console.log("cancel");
+        },
+      });
+    };
     return {
-      bool,
+      showDialog,
     };
   },
 };

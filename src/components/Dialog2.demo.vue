@@ -16,7 +16,7 @@ export default {
     const showDialog = () => {
       openDialog({
         title: h("strong", {}, "标题"),
-        content: "你好",
+        content: "内容",
         ok() {
           console.log("ok");
         },
