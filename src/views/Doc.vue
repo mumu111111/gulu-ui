@@ -3,7 +3,11 @@
   <div class="layout">
     <Topnav class="nav" toggleMenuButtonVisible />
     <div class="content">
-      <aside v-if="asideVisible">
+      <aside
+        v-if="asideVisible"
+        class="aside"
+        :class="{ active: asideVisible }"
+      >
         <h2>文档</h2>
         <ol>
           <li>
@@ -58,7 +62,7 @@ $aside-index: 10;
   > .content {
     flex-grow: 1;
     padding-top: 100px;
-    padding-left: 156px;
+    padding-left: 180px;
     @media (max-width: 500px) {
       padding-left: 0;
     }
@@ -74,10 +78,13 @@ $aside-index: 10;
     background: white;
     height: 100vh;
     overflow: auto;
-    padding: 20px 16px;
+    padding: 40px 60px;
+    @media (max-width: 500px) {
+      padding: 20px 16px;
+    }
   }
 }
-aside {
+.aside {
   background: #fff;
   width: 180px;
   padding: 100px 0px 0;
@@ -87,6 +94,7 @@ aside {
   height: 100%;
   z-index: $aside-index;
   border-right: 1px solid #e8e8e8;
+  /* transform: translateX(-200px); */
   > h2 {
     margin-bottom: 4px;
     padding: 4px 16px;
@@ -109,6 +117,9 @@ aside {
     }
   }
 }
+/* .active {
+  transform: translateX(0);
+} */
 main {
   overflow: auto;
 }
