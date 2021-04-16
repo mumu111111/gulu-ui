@@ -82,7 +82,7 @@ export default {
    </code></pre>
       </div>
     </div>
-    <div class="demo">
+    <!-- <div class="demo">
       <h2>支持禁用</h2>
       <div class="demo-component">
         <component :is="Button4Demo"></component>
@@ -108,7 +108,7 @@ export default {
 &lt;/script&gt;
    </code></pre>
       </div>
-    </div>
+    </div> -->
     <div class="demo">
       <h2>支持loading</h2>
       <div class="demo-component">
@@ -122,7 +122,6 @@ export default {
         <pre><code>
 &lt;template&gt;
   &lt;Button theme="button"  loading &gt; 加载中 &lt;/Button&gt;
-  &lt;Button theme="button"&gt;加载完毕 &lt;/Button&gt;
 &lt;/template>
 
 &lt;script lang="ts" &gt;

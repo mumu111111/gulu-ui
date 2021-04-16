@@ -74,7 +74,7 @@ $aside-index: 10;
     background: white;
     height: 100vh;
     overflow: auto;
-    padding: 20px 25px;
+    padding: 20px 16px;
   }
 }
 aside {

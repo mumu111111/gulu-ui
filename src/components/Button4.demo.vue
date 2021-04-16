@@ -1,8 +1,8 @@
 
 <template>
-  <Button disabled>普通禁用按钮</Button>
-  <Button theme="link" disabled>链接禁用按钮</Button>
-  <Button theme="text" disabled>文本禁用按钮</Button>
+  <Button disabled>普通禁用</Button>
+  <Button theme="link" disabled>链接禁用</Button>
+  <Button theme="text" disabled>文本禁用</Button>
 </template>
 
 <script lang="ts">
