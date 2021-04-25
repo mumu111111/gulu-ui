@@ -38,12 +38,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$green: #fff;
+/* $green: rgba(136, 225, 157, 0.61); */
 $color: #007974;
 $aside-index: 16;
 .topnav {
   color: $color;
-  background: $green;
+  /* background: $green; */
   display: flex;
   padding: 16px;
   position: fixed;

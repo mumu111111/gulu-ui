@@ -4,8 +4,8 @@
     <div class="topnavAndBanner">
       <Topnav />
       <div class="banner">
-        <h1>VUI</h1>
-        <h2>一个厉害的 UI 框架</h2>
+        <h1>COKE-UI</h1>
+        <h2>简单，好用</h2>
         <p class="actions">
           <a href="https://github.com/mumu111111">GitHub</a>
           <router-link to="/doc">开始</router-link>
